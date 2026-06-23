@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3073891f-4141-4c0c-98f1-92f3c3c5220b" name="Changes" comment="2. Variable&#10;. String&#10;. Integer&#10;. Boolean">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3073891f-4141-4c0c-98f1-92f3c3c5220b" name="Changes" comment="2. Variable&#10;. String&#10;. Integer&#10;. Boolean" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +31,7 @@
 }]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "git@github.com:skyg6384-jpg/PythonProject1.git",
+    "url": "https://github.com/skyg6384-jpg/main.py.git",
     "accountId": "689f3843-2762-4cd6-bfae-e87ef3f778b0"
   }
 }]]></component>
@@ -144,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782232335402</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="2. Variable&#10;. String&#10;. Integer&#10;. Boolean">
+      <option name="closed" value="true" />
+      <created>1782233266371</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1782233266371</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
