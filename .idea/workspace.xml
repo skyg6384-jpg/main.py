@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3073891f-4141-4c0c-98f1-92f3c3c5220b" name="Changes" comment="First Python Program">
+    <list default="true" id="3073891f-4141-4c0c-98f1-92f3c3c5220b" name="Changes" comment="2. Variable&#10;. String&#10;. Integer&#10;. Boolean">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +128,23 @@
       <option name="project" value="LOCAL" />
       <updated>1782227288095</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="First Python Program">
+      <option name="closed" value="true" />
+      <created>1782228277221</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1782228277221</updated>
+    </task>
+    <task id="LOCAL-00008" summary="2. Variable&#10;. String&#10;. Integer&#10;. Boolean">
+      <option name="closed" value="true" />
+      <created>1782232335402</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1782232335402</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +167,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st python tutorial" />
     <MESSAGE value="First Python Program" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Python Program" />
+    <MESSAGE value="2. Variable&#10;. String&#10;. Integer&#10;. Boolean" />
+    <option name="LAST_COMMIT_MESSAGE" value="2. Variable&#10;. String&#10;. Integer&#10;. Boolean" />
   </component>
 </project>
