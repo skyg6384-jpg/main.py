@@ -1,12 +1,7 @@
-# input = A function that prompts the user to enter data
-#         Returns the entered data as a string
+# Exercise 1 Rectangle Area Calc
 
-name = input("What is your name?: ")
-age = int(input("What is your age?: "))
+length = float(input("Enter the length: "))
+width = float(input("Enter the width: "))
+area = length * width
 
-age += 1
-
-print(f"Hello {name}!")
-print(f"HAPPY BIRTHDAY!")
-print(f"You are {age} years old")
-
+print(f"The area is: {area}cm²")
