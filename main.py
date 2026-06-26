@@ -1,42 +1,12 @@
-# Typecasting = the process of converting a variable from one data type to another
-#               str(), int(), float(), bool()
+# input = A function that prompts the user to enter data
+#         Returns the entered data as a string
 
-name = "SKY GOD"
-age = 21
-gpa = 6.7
-is_student = True
+name = input("What is your name?: ")
+age = int(input("What is your age?: "))
 
-print(type(name))   # class 'str'
-print(type(age))    # class 'int'
-print(type(gpa))    # class 'float'
-print(type(is_student))  # class 'bool'
+age += 1
 
-# Examples :
+print(f"Hello {name}!")
+print(f"HAPPY BIRTHDAY!")
+print(f"You are {age} years old")
 
-#float ---> int
-
-gpa = int(gpa)
-
-print(gpa)
-
-#int ---> float
-
-age = float(age)
-
-print(age)
-
-# int ---> str
-
-age = str(age)
-
-print(type(age))
-
-age += "1"
-
-print(age)
-
-#str ---> bool
-
-name = bool(name)
-
-print(name)
