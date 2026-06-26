@@ -1,61 +1,42 @@
-# Variable = A container for a value (string, integer, float, boolean)
-#            A variable behaves as if it was the value it contains
+# Typecasting = the process of converting a variable from one data type to another
+#               str(), int(), float(), bool()
 
-# String
-first_name = "Sky"
-food = "pizza"
-email = "Sky123@fake.com"
-
-print(first_name)
-print(f"Hello {first_name}")  # f-string
-print(f"You like {food}")  # using f-string
-print(f"Your email is: {email}")  # using f-string
-
-
-# Integers
-
+name = "SKY GOD"
 age = 21
-quantity = 3
-num_of_students = 5
+gpa = 6.7
+is_student = True
 
-print(f"You are {age} years old")
-print(f"You are buying {quantity} items")
-print(f"Your class has {num_of_students} students")
+print(type(name))   # class 'str'
+print(type(age))    # class 'int'
+print(type(gpa))    # class 'float'
+print(type(is_student))  # class 'bool'
 
-# Float
+# Examples :
 
-price = 99.9
-gpa = 6.74
-distance = 17.8
+#float ---> int
 
-print(f"The price is ₹{price}")
-print(f"The GPA is {gpa}")
-print(f"You ran {distance}Km")
+gpa = int(gpa)
 
-# Boolean
+print(gpa)
 
-is_student = False
+#int ---> float
 
-print(f"Are you a student? {is_student}")
-# using f-statement
-if is_student:
-    print("You are a student")
-else:
-    print("You are NOT a student")
+age = float(age)
 
-# Example 2
-for_sale = False
+print(age)
 
-if for_sale:
-    print("That item is for sale")
-else:
-    print("That item is NOT available")
+# int ---> str
 
-# Example 3
-is_online = False
+age = str(age)
 
-if is_online:
-    print("You are online")
-else:
-    print("You are offline ")
+print(type(age))
 
+age += "1"
+
+print(age)
+
+#str ---> bool
+
+name = bool(name)
+
+print(name)
