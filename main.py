@@ -1,15 +1,11 @@
 # arithmetic & math
 
+# Exercises1
+
 import math
 
-x = 12769
-y = 9.1
-g = 9.8
+radius = float(input("Enter the radius of a circle: "))
 
-# print(math.pi)
-# print(math.e)
-# result = math.sqrt(x)
-# result = math.ceil(y)
-result = math.floor(g)
+circumference = 2 * math.pi * radius
 
-print(result)
+print(f"The circumference is: {round(circumference, 2)}km")
