@@ -1,14 +1,34 @@
-# Madlib game
-# word game where you create a story
-# by filling in blanks with random words
+# arithmetic & math
 
-adjective1 = input("Enter an adjective (description): ")
-noun1 = input("Enter a noun (person, place, thing): ")
-adjective2 = input("Enter an adjective (description): ")
-verb1 = input("Enter a verb ending with 'ing: '")
-adjective3 = input("Enter an adjective (description): ")
+friend = 15
 
-print(f"Today I went a {adjective1} zoo.")
-print(f"In an exhibit, I saw a {noun1}")
-print(f"{noun1} was {adjective2} and {verb1}")
-print(f"I was {adjective3}")
+# Addition(+)
+
+#friend = friend + 1
+#friend += 1
+
+#Subtraction(-)
+
+#friend = friend - 2
+#friend -= 2
+
+#Multiplication(*)
+
+#friend = friend * 3
+#friend *= 3
+
+#Division(/)
+
+#friend = friend / 4
+#friend /= 4
+
+# Exponential(**)
+
+#friend = friend ** 5
+friend **= 5
+
+#Modulus(%)
+
+remainder = friend % 6
+
+print(remainder)
