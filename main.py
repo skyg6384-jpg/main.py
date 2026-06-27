@@ -1,13 +1,15 @@
 # arithmetic & math
 
-x = 3.14
-y = 4
-z = 5
+import math
 
-# result = round(x)
-# result = abs(y)
-# result = pow(4, 3)
-# result = max(x, y, z)
-result = min(x, y, z)
+x = 12769
+y = 9.1
+g = 9.8
+
+# print(math.pi)
+# print(math.e)
+# result = math.sqrt(x)
+# result = math.ceil(y)
+result = math.floor(g)
 
 print(result)
