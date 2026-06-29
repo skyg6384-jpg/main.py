@@ -1,18 +1,20 @@
-# if = Do some code only If some condition is true
-#      Else do something else
+# Python Calculator
 
-for_sale = False
+operator = input("Enter an operator (+ - * /): ")
+num1 = float(input("Enter the 1st number: "))
+num2 = float(input("Enter the 2nd number: "))
 
-if for_sale:
-    print("This item is for sale")
+if operator == "+":
+    result = num1 + num2
+    print(result)
+elif operator == "-":
+    result = num1 - num2
+    print(result)
+elif operator == "*":
+    result = num1 * num2
+    print(result)
+elif operator == "/":
+    result = num1 / num2
+    print(result)
 else:
-    print("This item is Not for sale")
-
-#OR
-
-online = True
-
-if online:
-    print("The user is online")
-else:
-    print("The user is offline")
+    print(f"{operator} is not valid operator")
