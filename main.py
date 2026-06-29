@@ -1,9 +1,18 @@
 # if = Do some code only If some condition is true
 #      Else do something else
 
-name = input("Enter your name: ")
+for_sale = False
 
-if name == "":
-    print("You did not type in your name!")
+if for_sale:
+    print("This item is for sale")
 else:
-    print(f"Hello {name}")
+    print("This item is Not for sale")
+
+#OR
+
+online = True
+
+if online:
+    print("The user is online")
+else:
+    print("The user is offline")
