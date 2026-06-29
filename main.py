@@ -1,12 +1,13 @@
-# arithmetic & math
+# if = Do some code only If some condition is true
+#      Else do something else
 
-# Exercises3
+age = int(input("Enter your age: "))
 
-import math
-
-a = float(input("Enter side A: "))
-b = float(input("Enter side B: "))
-
-c = math.sqrt(pow(a, 2) + pow(b, 2))
-
-print(f"Side c: {c}")
+if age >= 100:
+    print("You are too old to sign up!")
+elif age >= 18:
+    print("You are now signed up!")
+elif age < 0:
+    print("You haven't been born yet!")
+else:
+    print("You must be 18+ to sign up!")
