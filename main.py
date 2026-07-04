@@ -1,20 +1,19 @@
-# conditional expression = A one-line shortcut for the if-else statement (ternary operator)
-#                          Print or assign one of two values based on a condition
-#                          X if condition else Y
+# string methods
 
-num = 5
-a = 6
-b = 7
-age = 21
-temperature = 30
-user_role = "admin"
+print(help(str))    # is for help function.
 
-# print("Positive" if num > 0 else "Negative")
-#result = "EVEN" if num % 2 == 0 else "ODD"
-#max_num = a if a > b else b
-#min_num = a if a < b else b
-#status = "Adult" if age >= 18 else "child"
-#weather = "HOT" if temperature > 20 else "COLD"
-access_level = "Full Access" if user_role == "admin" else "Limited Access"
+#name = input("Enter your full name: ")
+phone_number = input("Enter your phone number # ")
 
-print(access_level)
+# result = len(name)
+# result = name.find("S")
+#result = name.rfind("S")
+# name = name.capitalize()
+# name = name.upper()
+# name = name.lower()
+# result = name.isdigit()
+# result = name.isalpha()
+# result = phone_number.count("-")
+# phone_number = phone_number.replace("-", "")
+
+print(phone_number)
