@@ -1,26 +1,16 @@
-# indexing = accessing elements of a sequence using [] (indexing operator)
-#            [start : end : step]
+# Topic: String Indexing
+
+# Challenge: Show Only First 4 Digits
+# Challenge: Print Every Second Character
 
 credit_number = "1234-5678-9012-3456"
 
-# start
-print(credit_number[0])
+# Exercise 1, Mask Credit Card Number or Display Only Last 4 Digits
 
-# start:end
-print(credit_number[0:4])
-print(credit_number[:4])
-print(credit_number[5:9])
-print(credit_number[10:14])
-print(credit_number[15:19])
-print(credit_number[5:19])
-print(credit_number[:])
-print(credit_number[-1])
-print(credit_number[-2])
-print(credit_number[-3])
-print(credit_number[-4])
-print(credit_number[-19])
+last_digits = credit_number[-4:]
+print(f"XXXX-XXXX-XXXX-{last_digits}")
 
-# step
-print(credit_number[::1])
-print(credit_number[::2])
-print(credit_number[::3])
+# Exercise 2, Reverse Credit Card Number or Backward Credit Numbers
+
+credit_number = credit_number[::-1]
+print(credit_number)
