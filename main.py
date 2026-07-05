@@ -1,16 +1,73 @@
-# Topic: String Indexing
+# format specifiers = {:flags} format a value based on what
+#                              flags are inserted
 
-# Challenge: Show Only First 4 Digits
-# Challenge: Print Every Second Character
+price1 = 30000.6789
+price2 = -50000.6789
+price3 = 12000.34
 
-credit_number = "1234-5678-9012-3456"
+# .(number)f = round to that many decimal places (fixed point)
 
-# Exercise 1, Mask Credit Card Number or Display Only Last 4 Digits
+print(f"Price 1 is ₹{price1:.2f}")
+print(f"Price 2 is ₹{price2:.2f}")
+print(f"Price 3 is ₹{price3:.2f}")
 
-last_digits = credit_number[-4:]
-print(f"XXXX-XXXX-XXXX-{last_digits}")
+# :(number) = allocate that many spaces
 
-# Exercise 2, Reverse Credit Card Number or Backward Credit Numbers
+print(f"Price 1 is ₹{price1:10}")
+print(f"Price 2 is ₹{price2:10}")
+print(f"Price 3 is ₹{price3:10}")
 
-credit_number = credit_number[::-1]
-print(credit_number)
+# :0(number) = allocate and zero pad that many spaces
+
+print(f"Price 1 is ₹{price1:010}")
+print(f"Price 2 is ₹{price2:010}")
+print(f"Price 3 is ₹{price3:010}")
+
+# :<(number) = left justify
+
+print(f"Price 1 is ₹{price1:<10}")
+print(f"Price 2 is ₹{price2:<10}")
+print(f"Price 3 is ₹{price3:<10}")
+
+# :>(number) = .right justify
+
+print(f"Price 1 is ₹{price1:>10}")
+print(f"Price 2 is ₹{price2:>10}")
+print(f"Price 3 is ₹{price3:>10}")
+
+# :^(number) = center align
+
+print(f"Price 1 is ₹{price1:^10}")
+print(f"Price 2 is ₹{price2:^10}")
+print(f"Price 3 is ₹{price3:^10}")
+
+# :+ = use a plus sign to indicate positive value
+
+print(f"Price 1 is ₹{price1:+}")
+print(f"Price 2 is ₹{price2:+}")
+print(f"Price 3 is ₹{price3:+}")
+
+# := = place sign to leftmost position
+
+print(f"Price 1 is ₹{price1:=}")
+print(f"Price 2 is ₹{price2:=}")
+print(f"Price 3 is ₹{price3:=}")
+
+# :  = insert a space before position numbers
+
+print(f"Price 1 is ₹{price1: }")
+print(f"Price 2 is ₹{price2: }")
+print(f"Price 3 is ₹{price3: }")
+
+# :, = comma separator
+
+print(f"Price 1 is ₹{price1:,}")
+print(f"Price 2 is ₹{price2:,}")
+print(f"Price 3 is ₹{price3:,}")
+
+
+# Exercise Mix Method
+
+print(f"Price 1 is ₹{price1:+,.2f}")
+print(f"Price 2 is ₹{price2:+,.2f}")
+print(f"Price 3 is ₹{price3:+,.2f}")
