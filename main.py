@@ -1,30 +1,22 @@
 # While loop = execute some code WHILE some condition remains true
 
 
-# While loop
+# Exercise 2 using logical operators
 
-name = input("Enter your name: ")
+food = input("Enter a food you like (q to quit): ")
 
-while name == "":
-    print("You did not enter your name")
-    name = input("Enter your name: ")
-print(f"Hello {name}")
+while not food == "q":
+    print(f"You like {food}")
+    food = input("Enter another food you like (q to quit): ")
 
-# Infinite loop ♾️
+print("bye bye!")
 
-ok = input("Enter you are ok: ")
+# Exercise 3 "or logical operators"
 
-while ok == "":
-    print("You are ok")
+num = int(input("Enter a # between 1 - 10: "))
 
-print(f"Hello {ok}")
+while num < 1 or num > 10:
+    print(f"{num} is not valid")
+    num = int(input("Enter a # between 1 - 10: "))
 
-# Exercise 1
-
-age = int(input("Enter your age: "))
-
-while age < 0:
-    print("Age can't be negative")
-    age = int(input("Enter your age: "))
-
-print(f"You are {age} years old")
+print(f"You number is {num}")
