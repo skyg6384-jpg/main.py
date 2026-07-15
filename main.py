@@ -1,15 +1,19 @@
-# python countdown timer program
+# nested loop = A loop within another loop (outer, inner)
+#               outer loop:
+#                  inner loop:
 
-import time
-from idlelib.debugobj import myrepr
+for x in range(3):
+    for y in range(1, 10):
+        print(y, end="")
+    print()
 
-my_time = int(input("Enter the time in seconds: "))
+# project rectangle using nested loop.
 
-for x in range(my_time, 0, -1):
-    seconds = x % 60
-    minutes = int(x / 60) % 60
-    hours = int(x / 3600)
-    print(f"{hours:02}:{minutes:02}:{seconds:02}")
-    time.sleep(1)
+rows = int(input("Enter number of rows: "))
+columns = int(input("Enter number of columns: "))
+symbol = input("Enter symbol: ")
 
-print("TIME'S UP!")
+for x in range(rows):
+    for y in range(columns):
+        print(symbol, end="")
+    print()
