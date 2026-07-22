@@ -1,42 +1,51 @@
-# 2D Collections
+# Python quiz game
 
-fruits =     ["apple", "banana", "coconut"]
-vegetables = ["celery", "carrots", "potatoes"]
-meats =      ["chicken", "fish", "turkey"]
+questions = ("How many elements are in the periodic table?: ",
+             "Which animal lays the largest eggs?: ",
+             "What is the most abundant gas in earth's atmosphere?: ",
+             "How many bones are in the human body?: ",
+             "Which planet in the solar system is the hottest?: ")
 
-groceries = [fruits, vegetables, meats]
+options = (("A. 116", "B. 117", "C. 118", "D. 119"),
+           ("A. Whale", "B. crocodile", "C. Elephant", "D. Ostrich"),
+           ("A. Nitrogen", "B. Oxygen", "C. carbon-Dioxide", "D. Hydrogen"),
+           ("A. 206", "B. 207", "C. 208", "D. 209"),
+           ("A. Mercury", "B. Venus", "C. Earth", "D. Mars"))
 
-print(groceries[0][0])
-print(groceries[1][0])
-print(groceries[2][0])
+answers = ("C", "D", "A", "A", "B")
+guesses = []
+score = 0
+question_num = 0
 
+for question in questions:
+    print("------------")
+    print(question)
+    for option in options[question_num]:
+        print(option)
+
+    guess = input("Enter (A, B, C, D): ").upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score += 1
+        print("Correct!")
+    else:
+        print("INCORRECT!")
+        print(f"{answers[question_num]} is the correct answer")
+    question_num += 1
+
+print("-------------")
+print("   RESULTS   ")
+print("-------------")
+
+print("answers: ", end=" ")
+for answer in answers:
+    print(answer, end=" ")
 print()
-for collection in groceries:
-    for food in collection:
-        print(food, end=" ")
-    print()
 
-print()
-names = ({"sky", "apple", "banana", "coconut"},
-         {"www", "jon", "space", "earth"},
-         {"god", "sun", "code"})
-
-
-for collection in names:
-    for name in collection:
-        print(name, end=" ")
-    print()
-
+print("guesses: ", end=" ")
+for guess in guesses:
+    print(guess, end=" ")
 print()
 
-# Exercise 2D Keypad
-
-num_pad = ((1, 2, 3),
-           (4, 5, 6),
-           (7, 8, 9),
-           ("*", 0, "#"))
-
-for row in num_pad:
-    for num in row:
-        print(num, end=" ")
-    print()
+score = int(score / len(questions) * 100)
+print(f"Your score is: {score}%")
