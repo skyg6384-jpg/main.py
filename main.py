@@ -1,51 +1,47 @@
-# Python quiz game
+# dictionary = a collection of {key:value} pairs
+#              ordered and changeable. No duplicates
 
-questions = ("How many elements are in the periodic table?: ",
-             "Which animal lays the largest eggs?: ",
-             "What is the most abundant gas in earth's atmosphere?: ",
-             "How many bones are in the human body?: ",
-             "Which planet in the solar system is the hottest?: ")
+capitals = {"India": "New Delhi",
+            "USA": "Washington D.C.",
+            "Russia": "Moscow",
+            "China": "beijing"}
 
-options = (("A. 116", "B. 117", "C. 118", "D. 119"),
-           ("A. Whale", "B. crocodile", "C. Elephant", "D. Ostrich"),
-           ("A. Nitrogen", "B. Oxygen", "C. carbon-Dioxide", "D. Hydrogen"),
-           ("A. 206", "B. 207", "C. 208", "D. 209"),
-           ("A. Mercury", "B. Venus", "C. Earth", "D. Mars"))
+#print(dir(capitals))
+#print(help(capitals))
 
-answers = ("C", "D", "A", "A", "B")
-guesses = []
-score = 0
-question_num = 0
+print(capitals.get("India"))
+print(capitals.get("Japan"))
 
-for question in questions:
-    print("------------")
-    print(question)
-    for option in options[question_num]:
-        print(option)
+if capitals.get("Russia"):
+    print("That capital exists")
+else:
+    print("That capital doesn't exist")
 
-    guess = input("Enter (A, B, C, D): ").upper()
-    guesses.append(guess)
-    if guess == answers[question_num]:
-        score += 1
-        print("Correct!")
-    else:
-        print("INCORRECT!")
-        print(f"{answers[question_num]} is the correct answer")
-    question_num += 1
+capitals.update({"Germany": "Berlin"})
+capitals.update({"USA": "Pakistan"})
+capitals.pop("China")
+capitals.popitem()
+#capitals.clear()
 
-print("-------------")
-print("   RESULTS   ")
-print("-------------")
+print(capitals)
 
-print("answers: ", end=" ")
-for answer in answers:
-    print(answer, end=" ")
-print()
+keys = capitals.keys()
 
-print("guesses: ", end=" ")
-for guess in guesses:
-    print(guess, end=" ")
-print()
+print(keys)
 
-score = int(score / len(questions) * 100)
-print(f"Your score is: {score}%")
+for key in capitals.keys():
+    print(key)
+
+
+values = capitals.values()
+print(values)
+
+for value in capitals.values():
+    print(value)
+
+
+items = capitals.items()
+print(items)
+
+for key, value in capitals.items():
+    print(f"{key}: {value}")
