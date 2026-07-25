@@ -1,47 +1,30 @@
-# dictionary = a collection of {key:value} pairs
-#              ordered and changeable. No duplicates
+# Concession stand Program
 
-capitals = {"India": "New Delhi",
-            "USA": "Washington D.C.",
-            "Russia": "Moscow",
-            "China": "beijing"}
+menu = {"pizza": 46.00,
+        "nachos": 10.00,
+        "popcorn": 100.00,
+        "chips": 50.00,
+        "soda": 40.00}
 
-#print(dir(capitals))
-#print(help(capitals))
+cart = []
+total = 0
 
-print(capitals.get("India"))
-print(capitals.get("Japan"))
+print("------- MENU -------")
+for key, value in menu.items():
+    print(f"{key:10}: ₹{value:.2f}")
+print("--------------------")
 
-if capitals.get("Russia"):
-    print("That capital exists")
-else:
-    print("That capital doesn't exist")
+while True:
+    food = input("Select an item (q to quit): ").lower()
+    if food == "q":
+        break
+    elif menu.get(food) is not None:
+        cart.append(food)
 
-capitals.update({"Germany": "Berlin"})
-capitals.update({"USA": "Pakistan"})
-capitals.pop("China")
-capitals.popitem()
-#capitals.clear()
+print("----- YOUR ORDER -----")
+for food in cart:
+    total += menu.get(food)
+    print(food, end=" ")
 
-print(capitals)
-
-keys = capitals.keys()
-
-print(keys)
-
-for key in capitals.keys():
-    print(key)
-
-
-values = capitals.values()
-print(values)
-
-for value in capitals.values():
-    print(value)
-
-
-items = capitals.items()
-print(items)
-
-for key, value in capitals.items():
-    print(f"{key}: {value}")
+print()
+print(f"Total is ₹{total:.2f}")
