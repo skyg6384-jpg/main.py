@@ -1,30 +1,27 @@
-# Concession stand Program
+# Random Numbers
 
-menu = {"pizza": 46.00,
-        "nachos": 10.00,
-        "popcorn": 100.00,
-        "chips": 50.00,
-        "soda": 40.00}
+import random
 
-cart = []
-total = 0
+#print(help(random))   # For helps
 
-print("------- MENU -------")
-for key, value in menu.items():
-    print(f"{key:10}: ₹{value:.2f}")
-print("--------------------")
+#number = random.randint(1, 20)
 
-while True:
-    food = input("Select an item (q to quit): ").lower()
-    if food == "q":
-        break
-    elif menu.get(food) is not None:
-        cart.append(food)
+low = 1
+high = 100
 
-print("----- YOUR ORDER -----")
-for food in cart:
-    total += menu.get(food)
-    print(food, end=" ")
+#number = random.randint(low, high)
+number = random.random()
 
-print()
-print(f"Total is ₹{total:.2f}")
+print(number)
+
+
+options = ("rock", "paper", "scissors")
+option = random.choice(options)
+
+print(option)
+
+
+cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+random.shuffle(cards)
+
+print(cards)
