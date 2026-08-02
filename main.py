@@ -1,35 +1,59 @@
-# Python rock, paper, scissors game
+# Dice Roller Program
 
 import random
 
-options = ("rock", "paper", "scissors")
-player = None
-computer = random.choice(options)
-running = True
+# print("\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518")
+# ● ┌ ─ ┐ │ └ ┘
 
-while running:
+"┌─────────┐"
+"│         │"
+"│         │"
+"│         │"
+"└─────────┘"
 
-    player = None
-    computer = random.choice(options)
+dice_art = {1: ("┌─────────┐",
+                "│         │",
+                "│    ●    │",
+                "│         │",
+                "└─────────┘"), 2: ("┌─────────┐",
+                                    "│ ●       │",
+                                    "│         │",
+                                    "│       ● │",
+                                    "└─────────┘"), 3: ("┌─────────┐",
+                                                        "│ ●       │",
+                                                        "│    ●    │",
+                                                        "│       ● │",
+                                                        "└─────────┘"), 4: ("┌─────────┐",
+                                                                            "│ ●     ● │",
+                                                                            "│         │",
+                                                                            "│ ●     ● │",
+                                                                            "└─────────┘"), 5: ("┌─────────┐",
+                                                                                                "│ ●     ● │",
+                                                                                                "│    ●    │",
+                                                                                                "│ ●     ● │",
+                                                                                                "└─────────┘"),
+            6: ("┌─────────┐",
+                "│ ●     ● │",
+                "│ ●     ● │",
+                "│ ●     ● │",
+                "└─────────┘")}
 
-    while player not in options:
-        player = input("Enter a choice (rock, paper, scissors): ")
+dice = []
+total = 0
+num_of_dice = int(input("How many dice?: "))
 
-    print(f"Player: {player}")
-    print(f"Computer: {computer}")
+for die in range(num_of_dice):
+  dice.append(random.randint(1, 6))
 
-    if player == computer:
-        print("It's a tie!")
-    elif player == "rock" and computer == "scissors":
-        print("You win!")
-    elif player == "paper" and computer == "rock":
-        print("You win!")
-    elif player == "scissors" and computer == "paper":
-        print("You win!")
-    else:
-        print("You lose!")
+# for die in range(num_of_dice):
+#     for line in dice_art.get(dice[die]):
+#          print(line)
 
-    if not input("Play again? (y/n): ").lower() == "y":
-        running = False
+for line in range(5):
+    for die in dice:
+        print(dice_art.get(die)[line], end="")
+    print()
 
-print("Thanks for playing!")
+for die in dice:
+    total += die
+print(f"total: {total}")
