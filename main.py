@@ -1,26 +1,31 @@
-# default arguments = A default value for certain parameters
-#                     default is used when that argument is omitted
-#                     make your functions more flexible, reduces # of arguments
-#                     1. positional, 2. DEFAULT, 3. Keyword, 4. arbitrary
+# keyword arguments = an argument preceded by an identifier
+#                     helps with readability
+#                     order of arguments doesn't matter
+#                     1. positional 2. default 3. KEYWORD 4. arbitrary
 
-def net_price(list_price, discount=0, tax=0.05):
-    return list_price * (1 - discount) * (1 + tax)
+def hello(greeting, title, first, last):
+    print(f"{greeting} {title} {first} {last}")
 
-print(net_price(60000))
-print(net_price(250, 0.1))
-print(net_price(500, 0.1, 0))
+hello("Hello", title="Mr.", first="Spongebob", last="Squarepants")
+hello("Hello", last="Mr.", title="John", first="Cena")
+hello("Hello", title="Mr.", last="John", first="James")
 
 
-# ------------
-# Exercise TIMER
-# ------------
+# Example 1
 
-import time
+for x in range(1, 11):
+    print(x, end=" ")
+print()
 
-def count(end, start=0):
-    for x in range(start, end+1):
-        print(x)
-        time.sleep(1)
-    print("DONE!")
+# Example 2
 
-count(10)
+print("1", "2", "3", "4", "5", sep="-")
+
+
+#Exercise
+
+def get_phone(country, area, first, last):
+    return f"{country}-{area}-{first}-{last}"
+
+phone_num = get_phone(country=91, area=123, first=456, last=7890)
+print(phone_num)
