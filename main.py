@@ -1,31 +1,70 @@
-# keyword arguments = an argument preceded by an identifier
-#                     helps with readability
-#                     order of arguments doesn't matter
-#                     1. positional 2. default 3. KEYWORD 4. arbitrary
+# *args = allows you to pass multiple non-key arguments
+# **kwargs = allows you to pass multiple keyword-arguments
+#            * unpacking operator
+#            1. positional 2. default 3. keyword 4. ARBITRARY
 
-def hello(greeting, title, first, last):
-    print(f"{greeting} {title} {first} {last}")
+# -----------------------
 
-hello("Hello", title="Mr.", first="Spongebob", last="Squarepants")
-hello("Hello", last="Mr.", title="John", first="Cena")
-hello("Hello", title="Mr.", last="John", first="James")
+# *args
 
+def add(*args):
+    total = 0
+    for arg in args:
+        total += arg
+    return total
 
-# Example 1
+print(add(1, 2, 3, 5, 7, 11, 13, 17, 23, 31, 37, 41, 47, 51, 53, 57, 61, 67, 71, 73, 79, 83, 87, 91, 97))
 
-for x in range(1, 11):
-    print(x, end=" ")
-print()
 
 # Example 2
 
-print("1", "2", "3", "4", "5", sep="-")
+def display_num(*args):
+    for arg in args:
+        print(arg, end=" ")
+    print()
+    print()
+
+display_num("Dr.", "Spongebob", "Harold", "Squarepants", "III")
+
+# ------------
+
+# **kwargs
+
+def print_address(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
 
 
-#Exercise
+print_address(street="123 Fake St.",
+              city="Fake City",
+              state="Fake State",
+              zip="Fake Zip",
+              country="Fake Country")
+print()
 
-def get_phone(country, area, first, last):
-    return f"{country}-{area}-{first}-{last}"
 
-phone_num = get_phone(country=91, area=123, first=456, last=7890)
-print(phone_num)
+# ----------------
+# Both *args & **kwargs together
+
+def shipping_label(*args, **kwargs):
+    for arg in args:
+        print(arg, end=" ")
+    print()
+
+    if "apt" in kwargs:
+      print(f"{kwargs.get('street')} {kwargs.get('apt')}")
+    elif "pobox" in kwargs:
+        print(f"{kwargs.get('street')}")
+        print(f"{kwargs.get('pobox')}")
+    else:
+        print(f"{kwargs.get('street')}")
+
+    print(f"{kwargs.get('city')} {kwargs.get('state')}, {kwargs.get('zip')}")
+
+shipping_label("Dr.", "Spongebob", "Harold", "Squarepants", "III",
+               street="123 Fake St.",
+               pobox="PO box #1001",
+               city="Fake City",
+               state="Fake State",
+               zip="Fake Zip",
+               country="Fake Country")
