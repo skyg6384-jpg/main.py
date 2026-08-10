@@ -1,73 +1,42 @@
-# Membership operators = used to test whether a value or variable is found in a sequence
-#                        (string, list, tuple, set, or dictionary)
-#                        1. in
-#                        2. not in
+# List  comprehension = A concise way to create list in Python
+#                       Compact and easier to read than traditional loops
+#                       [expression for value in iterable if condition]
 
+doubles = [x * 2 for x in range(1, 11)]
+triples = [y * 3 for y in range(1, 11)]
+squares = [z * z for z in range(1, 11)]
 
-# Example 1
-word = "Apple"
-
-letter = input("Guess a letter in the secret word: ")
-
-if letter in word:
-    print(f"There is a {letter}")
-else:
-    print(f"{letter} was not found")
-
-# or
-
-words = "Banana"
-
-letters = input("Guess a letter in the secret word: ")
-
-if letters not in word:
-    print(f"{letters} was not found")
-else:
-    print(f"There is a {letters}")
-
+print(doubles)
+print(triples)
+print(squares)
 
 # Example 2
 
-students = {"SkyGod", "Spongebob", "Sanday"}
+fruits = ['apple', 'banana', 'orange']
+#fruits = [fruit.upper() for fruit in fruits]
+#print(fruits)
 
-student = input("Enter the name of a student: ")
-
-if student in students:
-    print(f"{student} is a student")
-else:
-    print(f"{student} was not found")
+fruit_chars = [fruit[0] for fruit in fruits]
+print(fruit_chars)
 
 
-# or
+# Example 3
 
-students2 = {"SkyGod", "Spongebob", "Sanday"}
+numbers = [1, -2, 3, -4, 5, -6]
+positive_nums = [num for num in numbers if num >= 0]
+negative_nums = [num for num in numbers if num < 0]
+even_nums = [num for num in numbers if num % 2 == 0]
+odd_nums = [num for num in numbers if num % 2 == 1]
 
-student2 = input("Enter the name of a student: ")
+print(positive_nums)
+print(negative_nums)
+print(even_nums)
+print(odd_nums)
 
-if student2 not in students2:
-    print(f"{student2} was not found")
-    print(f"{student2} is a student")
-else:
-    print(f"{student2} is a student")
-
-# Example 3 in dictionary
-grades = {"Sandy": "A",
-          "SkyGod": "B+",
-          "Spongebob": "C",
-          "Sanday": "D"}
-
-student3 = input("Enter the name of a student: ")
-
-if student3 in grades:
-    print(f"{student3}'s grade is {grades[student3]}")
-else:
-    print(f"{student3} was not found")
 
 # Example 4
 
-email = "SkyGod@gmail.com"
+grades = [85, 42, 79, 90, 56, 61, 30]
+passing_grades = [grade for grade in grades if grade >= 60]
 
-if "@" in email and "." in email:
-    print(f"Valid email")
-else:
-    print(f"Invalid email")
+print(passing_grades)
