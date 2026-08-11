@@ -1,42 +1,50 @@
-# List  comprehension = A concise way to create list in Python
-#                       Compact and easier to read than traditional loops
-#                       [expression for value in iterable if condition]
+# Match-case statement (switch): An alternative to using many 'elif' statements
+#                                Execute some code if a value matches a 'case'
+#                                Benefits: cleaner and syntax is more readable
 
-doubles = [x * 2 for x in range(1, 11)]
-triples = [y * 3 for y in range(1, 11)]
-squares = [z * z for z in range(1, 11)]
 
-print(doubles)
-print(triples)
-print(squares)
+
+#Example 1
+
+
+def day_of_week(day):
+    match day:
+        case 1:
+            return "It is Sunday"
+        case 2:
+            return "It is Monday"
+        case 3:
+            return "It is Tuesday"
+        case 4:
+            return "It is Wednesday"
+        case 5:
+            return "It is Thursday"
+        case 6:
+            return "It is Friday"
+        case 7:
+            return "It is Saturday"
+        case _:
+            return "Not a valid day"
+
+print(day_of_week(1))
+
 
 # Example 2
 
-fruits = ['apple', 'banana', 'orange']
-#fruits = [fruit.upper() for fruit in fruits]
-#print(fruits)
+def is_weekend(day):
+    match day:
+        case "Sunday" | "Saturday":
+            return True
+        case "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday":
+            return False
+        case _:
+            return False
 
-fruit_chars = [fruit[0] for fruit in fruits]
-print(fruit_chars)
-
-
-# Example 3
-
-numbers = [1, -2, 3, -4, 5, -6]
-positive_nums = [num for num in numbers if num >= 0]
-negative_nums = [num for num in numbers if num < 0]
-even_nums = [num for num in numbers if num % 2 == 0]
-odd_nums = [num for num in numbers if num % 2 == 1]
-
-print(positive_nums)
-print(negative_nums)
-print(even_nums)
-print(odd_nums)
-
-
-# Example 4
-
-grades = [85, 42, 79, 90, 56, 61, 30]
-passing_grades = [grade for grade in grades if grade >= 60]
-
-print(passing_grades)
+print(is_weekend("Sunday"))
+print(is_weekend("Monday"))
+print(is_weekend("Tuesday"))
+print(is_weekend("Wednesday"))
+print(is_weekend("Thursday"))
+print(is_weekend("Friday"))
+print(is_weekend("Saturday"))
+print(is_weekend("Pizza"))
