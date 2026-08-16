@@ -1,40 +1,54 @@
-# ---------- main.py ----------
-# module = a file containing code you want to include in your program
-#          use 'import' to include a module (built-in or your own)
-#          useful to break up a large program reusable separate files
+# Scope Resolution
 
+# variable scope = where a variable and accessible
+# scope resolution = (LEGB) Local -> Enclosed -> Global -> Built-in
 
-#print(help("modules"))
-#print(help("math"))
+# ------------
+# Local
 
-# Example
+def func1():
+    x = 1
+    print(x)
 
-#import math
-#print(math.pi)
+def func2():
+    x = 2
+    print(x)
 
-#import math as m
-#print(m.pi)
+func1()
+func2()
 
-#from math import e
-#print(e)
+# ------------
+# Enclosed
 
-import math
+def func3():
+    y = 3
 
-a, b, c, d, e = 1, 2, 3, 4, 5
+    def func4():
+        print(y)
+    func4()
 
-print(math.e ** a)
-print(math.e ** b)
-print(math.e ** c)
-print(math.e ** d)
-print(math.e ** e)
+func3()
 
+# ------------
+# Global
 
-import example
+def func5():
+    print(z)
 
-result = example.pi
-result = example.square(3)
-result = example.cube(3)
-result = example.circumference(3)
-result = example.area(3)
+def func6():
+    print(z)
 
-print(result)
+z = 5
+
+func5()
+func6()
+
+# ------------
+# Built-in
+
+from math import e
+
+def func7():
+    print(e)
+
+func7()
