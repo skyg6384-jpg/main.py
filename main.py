@@ -1,26 +1,36 @@
-# Class Variable
-# class variable = Shared among all instances of a class
-# Defined outside the constructor
-# Allow you to share data among all object created from that class
+# Inheritance  = Allows a class to inherit attributes and methods from another class
+#                Helps with code reusability and extensibility
+#                class Child(Parent)
 
-class Student:
-
-    class_year = 2026
-    num_Student = 0
-
-    def __init__(self, name, age):
+class Animal:
+    def __init__(self, name):
         self.name = name
-        self.age = age
-        Student.num_Student += 1
+        self.is_alive = True
 
-Student1 = Student("Spongebob", 30)
-Student2 = Student("Patrick", 35)
-Student3 = Student("DAV", 51)
-Student4 = Student("SkyGod", 21)
+    def eat(self):
+        print(f"{self.name} is eating")
 
-print(f"My graduating class year of {Student1.class_year} has {Student1.num_Student} students")
+    def sleep(self):
+        print(f"{self.name} is sleeping")
 
-print(f"Name: {Student1.name}, age: {Student1.age}")
-print(f"Name: {Student2.name}, age: {Student2.age}")
-print(f"Name: {Student3.name}, age: {Student3.age}")
-print(f"Name: {Student4.name}, age: {Student4.age}")
+class Dog(Animal):
+    def speek(self):
+        print("WOOF!")
+
+class Cat(Animal):
+    def speek(self):
+        print("MEOW!")
+
+class Mouse(Animal):
+    def speek(self):
+        print("CHIHIRO!")
+
+dog = Dog("Scooby")
+cat = Cat("Sandra")
+mouse = Mouse("Suman")
+
+print(mouse.name)
+print(mouse.is_alive)
+mouse.eat()
+mouse.sleep()
+mouse.speek()
