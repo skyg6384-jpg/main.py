@@ -1,11 +1,46 @@
-# Inheritance  = Allows a class to inherit attributes and methods from another class
-#                Helps with code reusability and extensibility
-#                class Child(Parent)
+# multiple inheritance = inherit from more than one parent class
+#                        C(A, B)
+
+# multilevel inheritance = inherit from a parent which inherits from another parent
+#                          C(B) <- B(A) <- A
+
+# --------------------
+# multiple inheritance
+# --------------------
+
+class Prey:
+    def flee(self):
+        print("This animal is fleeing")
+
+class Predator:
+    def hunt(self):
+        print("This animal is hunting")
+
+class Rabbit(Prey):
+    pass
+
+class Hawk(Predator):
+    pass
+
+class Fish(Prey, Predator):
+    pass
+
+rabbit = Rabbit()
+hawk = Hawk()
+fish = Fish()
+
+rabbit.flee()
+hawk.hunt()
+fish.hunt()
+
+# ----------------------
+# multilevel inheritance
+# ----------------------
 
 class Animal:
+
     def __init__(self, name):
         self.name = name
-        self.is_alive = True
 
     def eat(self):
         print(f"{self.name} is eating")
@@ -13,24 +48,37 @@ class Animal:
     def sleep(self):
         print(f"{self.name} is sleeping")
 
-class Dog(Animal):
-    def speek(self):
-        print("WOOF!")
+class Prey(Animal):
 
-class Cat(Animal):
-    def speek(self):
-        print("MEOW!")
+    def flee(self):
+        print(f"{self.name} is fleeing")
 
-class Mouse(Animal):
-    def speek(self):
-        print("CHIHIRO!")
+class Predator(Animal):
+    def hunt(self):
+        print(f"{self.name} is hunting")
 
-dog = Dog("Scooby")
-cat = Cat("Sandra")
-mouse = Mouse("Suman")
+class Deer(Prey):
+    pass
 
-print(mouse.name)
-print(mouse.is_alive)
+class Snake(Predator):
+    pass
+
+class Mouse(Prey, Predator):
+    pass
+
+deer = Deer("Bugs")
+snake = Snake("Tony")
+mouse = Mouse("Nemo")
+
+deer.eat()
+snake.eat()
 mouse.eat()
+
+deer.sleep()
+snake.sleep()
 mouse.sleep()
-mouse.speek()
+
+deer.flee()
+snake.hunt()
+mouse.hunt()
+mouse.flee()
