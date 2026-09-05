@@ -1,84 +1,61 @@
-# multiple inheritance = inherit from more than one parent class
-#                        C(A, B)
+# super() = Function used in a child class to call methods from a parent class (superclass).
+#           Allows you to extend the functionality of the inherited methods
 
-# multilevel inheritance = inherit from a parent which inherits from another parent
-#                          C(B) <- B(A) <- A
+class Shape:
+    def __init__(self, color, is_filled):
+        self.color = color
+        self.is_filled = is_filled
 
-# --------------------
-# multiple inheritance
-# --------------------
+    def describe(self):
+        print(f"It is {self.color} and {'filled' if self.is_filled else 'not filled'}")
 
-class Prey:
-    def flee(self):
-        print("This animal is fleeing")
+class Circle(Shape):
+    def __init__(self, color, is_filled, radius):
+        super().__init__(color, is_filled)
+        self.radius = radius
 
-class Predator:
-    def hunt(self):
-        print("This animal is hunting")
+    def describe(self):
+        print(f"It is a circle with an area of {3.14 * self.radius * self.radius}cm^2")
+        super().describe()
 
-class Rabbit(Prey):
-    pass
+class Square(Shape):
+    def __init__(self, color, is_filled, width):
+        super().__init__(color, is_filled)
+        self.width = width
 
-class Hawk(Predator):
-    pass
+    def describe(self):
+        print(f"It is a square with an area of {self.width * self.width}cm^2")
+        super().describe()
 
-class Fish(Prey, Predator):
-    pass
+class Triangle(Shape):
+    def __init__(self, color, is_filled, width, height):
+        super().__init__(color, is_filled)
+        self.width = width
+        self.height = height
 
-rabbit = Rabbit()
-hawk = Hawk()
-fish = Fish()
+    def describe(self):
+        print(f"It is a triangle with an area of {self.width * self.height / 2}cm^2")
+        super().describe()
 
-rabbit.flee()
-hawk.hunt()
-fish.hunt()
+circle = Circle(color="red", is_filled=True, radius=5)
+square = Square(color="blue", is_filled=False, width=6)
+triangle = Triangle(color="yellow", is_filled=True, width=7, height=8)
 
-# ----------------------
-# multilevel inheritance
-# ----------------------
+print(circle.color)
+print(circle.is_filled)
+print(f"{circle.radius}cm")
+circle.describe()
 
-class Animal:
+print()
 
-    def __init__(self, name):
-        self.name = name
+print(square.color)
+print(square.is_filled)
+print(f"{square.width}cm")
+square.describe()
+print()
 
-    def eat(self):
-        print(f"{self.name} is eating")
-
-    def sleep(self):
-        print(f"{self.name} is sleeping")
-
-class Prey(Animal):
-
-    def flee(self):
-        print(f"{self.name} is fleeing")
-
-class Predator(Animal):
-    def hunt(self):
-        print(f"{self.name} is hunting")
-
-class Deer(Prey):
-    pass
-
-class Snake(Predator):
-    pass
-
-class Mouse(Prey, Predator):
-    pass
-
-deer = Deer("Bugs")
-snake = Snake("Tony")
-mouse = Mouse("Nemo")
-
-deer.eat()
-snake.eat()
-mouse.eat()
-
-deer.sleep()
-snake.sleep()
-mouse.sleep()
-
-deer.flee()
-snake.hunt()
-mouse.hunt()
-mouse.flee()
+print(triangle.color)
+print(triangle.is_filled)
+print(f"{triangle.width}cm")
+print(f"{triangle.height}cm")
+triangle.describe()
