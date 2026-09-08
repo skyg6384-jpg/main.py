@@ -1,27 +1,31 @@
-# "Duck typing" = Another way to achieve polymorphism besides Inheritance
-#                 Object must have the minimum necessary attributes/methods
-#                 "If it looks like a duck and quacks like a duck, it must be a duck."
+# Static methods = A method that belong to a class rather than any object from that class (instance)
+#                  Usually used for general utility functions from socket import send_fds
 
-class Animal:
-    alive = True
 
-class Dog(Animal):
-    def speak(self):
-        print("WOOF!")
+# Instance methods = Best for operations on instances of the class (object)
+# static methods = Best for utility function that do not need access to class data
 
-class Cat(Animal):
-    def speak(self):
-        print("MEOW!")
+class Employee:
 
-class Car:
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
 
-    alive = False
+    def get_info(self):
+        return f"{self.name} = {self.position}"
 
-    def speak(self):
-        print("HONK!")
+    @staticmethod
+    def is_valid_position(position):
+        valid_positions = ["Manager", "Cashier", "Cook", "Janitor"]
+        return position in valid_positions
 
-animal = [Dog(), Cat(), Car()]
+employee1 = Employee("Eugune", "Manager")
+employee2 = Employee("Squidward", "Cashier")
+employee3 = Employee("Spongebob", "Cook")
 
-for animal in animal:
-    animal.speak()
-    print(animal.alive)
+print(Employee.is_valid_position("Cook"))
+print(Employee.is_valid_position("Rocket Scientist"))
+
+print(employee1.get_info())
+print(employee2.get_info())
+print(employee3.get_info())
