@@ -1,31 +1,38 @@
-# Static methods = A method that belong to a class rather than any object from that class (instance)
-#                  Usually used for general utility functions from socket import send_fds
+# Class methods = Allow operations related to the class itself
+#                 Take (cls) as the first parameter, which represents the class itself.
 
+# Instance methods = best for operations on instances of the class (objects)
+# Static methods = Best for utility functions that do not need access to class data
+# Class methods = Best for class-level data or require access to the class itself
 
-# Instance methods = Best for operations on instances of the class (object)
-# static methods = Best for utility function that do not need access to class data
+class Student:
+    count = 0
+    total_gpa = 0
 
-class Employee:
-
-    def __init__(self, name, position):
+    def __init__(self, name, gpa):
         self.name = name
-        self.position = position
+        self.gpa = gpa
+        Student.count += 1
+        Student.total_gpa += gpa
 
+     #INSTANCE METHOD
     def get_info(self):
-        return f"{self.name} = {self.position}"
+        return f"{self.name} {self.gpa}"
 
-    @staticmethod
-    def is_valid_position(position):
-        valid_positions = ["Manager", "Cashier", "Cook", "Janitor"]
-        return position in valid_positions
+    @classmethod
+    def get_count(cls):
+        return f"Total # of students: {cls.count}"
 
-employee1 = Employee("Eugune", "Manager")
-employee2 = Employee("Squidward", "Cashier")
-employee3 = Employee("Spongebob", "Cook")
+    @classmethod
+    def get_average_gpa(cls):
+        if cls.count == 0:
+            return 0
+        else:
+            return f"Average gpa: {cls.total_gpa / cls.count:.2f}"
 
-print(Employee.is_valid_position("Cook"))
-print(Employee.is_valid_position("Rocket Scientist"))
+student1 = Student("SkyGod", 6.8)
+student2 = Student("EarthGod", 7.9)
+student3 = Student("WaterGod", 8.2)
 
-print(employee1.get_info())
-print(employee2.get_info())
-print(employee3.get_info())
+print(Student.get_count())
+print(Student.get_average_gpa())
