@@ -1,38 +1,51 @@
-# Class methods = Allow operations related to the class itself
-#                 Take (cls) as the first parameter, which represents the class itself.
+# Magic methods = Dunder methods (double underscore) __init__, __str__, __eq__
+#                 They are automatically called by many of Python's built-in operations.
+#                 They allow developers to define or customize the behavior of objects
 
-# Instance methods = best for operations on instances of the class (objects)
-# Static methods = Best for utility functions that do not need access to class data
-# Class methods = Best for class-level data or require access to the class itself
+class Book:
 
-class Student:
-    count = 0
-    total_gpa = 0
+    def __init__(self, title, author, num_pages):
+        self.title = title
+        self.author = author
+        self.num_pages = num_pages
 
-    def __init__(self, name, gpa):
-        self.name = name
-        self.gpa = gpa
-        Student.count += 1
-        Student.total_gpa += gpa
+    def __str__(self):
+        return f"'{self.title}' by {self.author}"
 
-     #INSTANCE METHOD
-    def get_info(self):
-        return f"{self.name} {self.gpa}"
+    def __eq__(self, other):
+        return self.title == other.title and self.author == other.author
 
-    @classmethod
-    def get_count(cls):
-        return f"Total # of students: {cls.count}"
+    def __lt__(self, other):
+        return self.num_pages < other.num_pages
 
-    @classmethod
-    def get_average_gpa(cls):
-        if cls.count == 0:
-            return 0
+    def __gt__(self, other):
+        return self.num_pages > other.num_pages
+
+    def __add__(self,other):
+        return f"{self.num_pages + other.num_pages} pages"
+
+    def __contains__(self, keyword):
+        return keyword in self.title or keyword in self.author
+
+    def __getitem__(self, key):
+        if key == "title":
+            return self.title
+        if key == "author":
+            return self.author
         else:
-            return f"Average gpa: {cls.total_gpa / cls.count:.2f}"
+            return f"key '{key}' was not found"
 
-student1 = Student("SkyGod", 6.8)
-student2 = Student("EarthGod", 7.9)
-student3 = Student("WaterGod", 8.2)
+book1 = Book("ASTROPHYSICS for PEOPLE in a HURRY", "Neil DeGrasse Tyson", 211)
+book2 = Book("In Search of Schrödinger's Cat", "John Gribbin", 252)
+book3 = Book("Chess Book for Beginners", "A.Gopalaratnam", 385)
+book4 = Book("In Search of Schrödinger's Cat", "John Gribbin", 272)
 
-print(Student.get_count())
-print(Student.get_average_gpa())
+print(book1)  # __str__
+print(book2 == book4)  # __eq__
+print(book2 > book4)  # __lt__
+print(book2 < book4)  # __gt__
+print(book2 + book4)  # __add__
+print("Cat" in book2)  # __contains__
+print(book1['title'])  # __getitem__
+print(book1['author'])  # __getitem__
+print(book1['audio'])  # __getitem__
