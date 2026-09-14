@@ -1,15 +1,15 @@
-# exception = An event that interrupts the flow of a program
-#            (ZeroDivisionError, TypeError, ValueError)
-#             1. try, 2. except, 3. finally
+# Python file detection
 
-try:
-    number = int(input("Enter a number: "))
-    print(1 / number)
-except ZeroDivisionError:
-    print("You can't divide by zero")
-except ValueError:
-    print("Enter only numbers please!")
-except Exception:
-    print("Something went wrong!")
-finally:
-    print("Do some cleanup here")
+import os
+
+file_path = "C:/Users/ASUS/OneDrive/Pictures/Desktop/test.txt"
+
+if os.path.exists(file_path):
+    print(f"The file '{file_path}' exists")
+
+    if os.path.isfile(file_path):
+        print(f"The file '{file_path}' exists")
+    elif os.path.isdir(file_path):
+        print("That is a directory")
+else:
+    print("That location doesn't exist")
