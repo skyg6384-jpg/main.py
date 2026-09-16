@@ -1,19 +1,19 @@
-# Python reading files (.text, .json, .csv)
+# Date & Time
 
-import json
-import csv
+import datetime
 
-file_path = "C:/Users/ASUS/OneDrive/Pictures/Desktop/output.csv"  # (txt, json, csv)
+date = datetime.date(2026, 9, 15)
+today = datetime.date.today()
 
-try:
-    with open(file_path, "r") as file:
-        #content = file.read()  #txt
-        #content = json.load(file)   #json
-        content = csv.reader(file)
-        for line in content:
-            print(line)  #csv
-        #print(content)  #txt, json only using
-except FileNotFoundError:
-    print("That file was not found")
-except PermissionError:
-    print("You do not have permission to read the file")
+time = datetime.time(12, 30, 0)
+now = datetime.datetime.now()
+
+now = now.strftime("%H:%M:%S %d-%m-%Y")
+
+target_datetime = datetime.datetime(3000, 1, 2, 12, 30, 0)
+current_datetime = datetime.datetime.now()
+
+if target_datetime < current_datetime:
+    print("Target date has passed")
+else:
+    print("Target date has NOT passed")
