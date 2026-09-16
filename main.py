@@ -10,6 +10,10 @@ now = datetime.datetime.now()
 
 now = now.strftime("%H:%M:%S %d-%m-%Y")
 
+#print(today)
+#print(time)
+#print(now)
+
 target_datetime = datetime.datetime(3000, 1, 2, 12, 30, 0)
 current_datetime = datetime.datetime.now()
 
