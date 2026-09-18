@@ -1,23 +1,29 @@
-# Date & Time
+# Python Alarm Clock
 
+import time
 import datetime
+import pygame
 
-date = datetime.date(2026, 9, 15)
-today = datetime.date.today()
+def set_alarm(alarm_time):
+    print(f"Alarm set for {alarm_time}")
+    sound_file = "my_music.mp3"
+    is_running = True
 
-time = datetime.time(12, 30, 0)
-now = datetime.datetime.now()
+    while is_running:
+        curr_time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(f"Current time: {curr_time}")
 
-now = now.strftime("%H:%M:%S %d-%m-%Y")
+        if curr_time == alarm_time:
+            print("WAKE UP!}")
 
-#print(today)
-#print(time)
-#print(now)
+            pygame.mixer.music.load(sound_file)
+            pygame.mixer.music.play()
 
-target_datetime = datetime.datetime(3000, 1, 2, 12, 30, 0)
-current_datetime = datetime.datetime.now()
 
-if target_datetime < current_datetime:
-    print("Target date has passed")
-else:
-    print("Target date has NOT passed")
+
+        time.sleep(1)
+
+
+if __name__ == "__main__":
+    alarm_time = input("Enter the alarm time (HH:MM:SS): ")
+    set_alarm(alarm_time)
