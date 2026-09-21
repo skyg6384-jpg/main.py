@@ -1,33 +1,34 @@
-# Python Alarm Clock
+# multithreading = Used perform multiple tasks concurrently (multitasking)
+#                  Good for I/O bound tasks like reading files or fetching data from APIs
+#                  threading.Thread(target=my_function)
 
+import threading
 import time
-import datetime
-import pygame
-
-def set_alarm(alarm_time):
-    print(f"Alarm set for {alarm_time}")
-    sound_file = "my_music.mp3"
-    is_running = True
-
-    while is_running:
-        curr_time = datetime.datetime.now().strftime("%H:%M:%S")
-        print(f"Current time: {curr_time}")
-
-        if curr_time == alarm_time:
-            print("WAKE UP! 😣")
-
-            pygame.mixer.init()
-            pygame.mixer.music.load(sound_file)
-            pygame.mixer.music.play()
-
-            while pygame.mixer.music.get_busy():
-                time.sleep(1)
-
-            is_running = False
-
-        time.sleep(1)
 
 
-if __name__ == "__main__":
-    alarm_time = input("Enter the alarm time (HH:MM:SS): ")
-    set_alarm(alarm_time)
+def walk_dog(first, last):
+    time.sleep(8)
+    print(f"You finish walking {first} {last}")
+
+def take_out_trash():
+    time.sleep(2)
+    print("You take out the trash")
+
+def get_mail():
+    time.sleep(4)
+    print("You get the mail")
+
+chore1 = threading.Thread(target=walk_dog, args=("Scooby", "Doo"))  #If only one then args=("Scooby",)
+chore1.start()
+
+chore2 = threading.Thread(target=take_out_trash)
+chore2.start()
+
+chore3 = threading.Thread(target=get_mail)
+chore3.start()
+
+chore1.join()
+chore2.join()
+chore3.join()
+
+print("All chores are complete!")
