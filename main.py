@@ -1,34 +1,24 @@
-# multithreading = Used perform multiple tasks concurrently (multitasking)
-#                  Good for I/O bound tasks like reading files or fetching data from APIs
-#                  threading.Thread(target=my_function)
+# How to connect to an API using Python
 
-import threading
-import time
+import requests
 
+base_url = "https://pokeapi.co/api/v2/"
 
-def walk_dog(first, last):
-    time.sleep(8)
-    print(f"You finish walking {first} {last}")
+def get_pokemon_info(name):
+    url = f"{base_url}/pokemon/{name}"
+    response = requests.get(url)
 
-def take_out_trash():
-    time.sleep(2)
-    print("You take out the trash")
+    if response.status_code == 200:
+        pokemon_data = response.json()
+        return pokemon_data
+    else:
+        print(f"Failed to retrieve data {response.status_code}")
 
-def get_mail():
-    time.sleep(4)
-    print("You get the mail")
+pokemon_name = "mewtwo"
+pokemon_info = get_pokemon_info(pokemon_name)
 
-chore1 = threading.Thread(target=walk_dog, args=("Scooby", "Doo"))  #If only one then args=("Scooby",)
-chore1.start()
-
-chore2 = threading.Thread(target=take_out_trash)
-chore2.start()
-
-chore3 = threading.Thread(target=get_mail)
-chore3.start()
-
-chore1.join()
-chore2.join()
-chore3.join()
-
-print("All chores are complete!")
+if pokemon_info:
+    print(f"Name: {pokemon_info["name"].capitalize()}")
+    print(f"Id: {pokemon_info["id"]}")
+    print(f"Height: {pokemon_info["height"]}")
+    print(f"Weight: {pokemon_info["weight"]}")
