@@ -1,24 +1,20 @@
-# How to connect to an API using Python
+# PyQt5 introduction
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtGui import QIcon
 
-import requests
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("My first GUI")
+        self.setGeometry(700, 300, 500, 500)  # self.setGeometry(x, y, width, height)
+        self.setWindowIcon(QIcon("The Fool 1.jpg"))
 
-base_url = "https://pokeapi.co/api/v2/"
+def main():
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec_())
 
-def get_pokemon_info(name):
-    url = f"{base_url}/pokemon/{name}"
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        pokemon_data = response.json()
-        return pokemon_data
-    else:
-        print(f"Failed to retrieve data {response.status_code}")
-
-pokemon_name = "mewtwo"
-pokemon_info = get_pokemon_info(pokemon_name)
-
-if pokemon_info:
-    print(f"Name: {pokemon_info["name"].capitalize()}")
-    print(f"Id: {pokemon_info["id"]}")
-    print(f"Height: {pokemon_info["height"]}")
-    print(f"Weight: {pokemon_info["weight"]}")
+if __name__ == "__main__":
+    main()
