@@ -1,11 +1,15 @@
-# Introduction to NumPy
-
+# Multidimensional array
+#---------------
 import numpy as np
 
-array = np.array([[1, 2, 3, 4]])
+array = np.array([[['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']],
+                  [['J', 'K', 'L'], ['M', 'N', 'O'], ['P', 'Q', 'R']],
+                  [['S', 'T', 'U'], ['V', 'W', 'X'], ['Y', 'Z', ' ']]])
 
-array = array * 2
+#print(array.ndim)
+#print(array.shape)
+#print(array[1, 0, 0])   # array[0][0][0] is same
 
-print(array)
+word = array[2, 0, 0] + array[1, 0, 1] + array[2, 2, 0] + array[2, 2, 2] + array[0, 2, 0] + array[1, 1, 2] + array[0, 1, 0]
 
-print(type(array))   # nd = N - Dimensional
+print(word)
