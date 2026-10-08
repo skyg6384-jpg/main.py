@@ -1,50 +1,34 @@
-# arithmetic
+# Broadcasting Using NumPy
+
+# Broadcasting allows NumPy to perform operations on arrays
+# with different shapes by virtually expanding dimensions
+# so they match the larger array's shape.
+
+# The dimension have the same size.
+# OR
+# One of the dimensions has a size of 1.
+
+#-----------------
 import numpy as np
 
-# Scalar arithmetic
+array1 = np.array([[1, 2, 3, 4],
+                   [5, 6, 7, 8],
+                   [9, 10, 11, 12],
+                   [13, 14, 15, 16]])
+array2 = np.array([[1], [2], [3], [4]])
 
-array = np.array([1.01, 2.5, 3.99])
+print(array1.shape)
+print(array2.shape)
 
-print(array + 1)
-print(array - 2)
-print(array * 3)
-print(array / 4)
-print(array ** 5)
-
-#----------------
-# Vectorized math funcs
-
-print(np.sqrt(array))
-print(np.round(array))
-print(np.pi)
-
-#----------------
-# EXERCISE
-
-radii = np.array([1, 2, 3])
-
-print(np.pi * radii ** 2)
-
-#----------------
-# Element-wise arithmetic
-
-array1 = np.array([1, 2, 3])
-array2 = np.array([4, 5, 6])
-
-print(array1 + array2)
-print(array1 - array2)
 print(array1 * array2)
-print(array1 / array2)
-print(array1 ** array2)
 
-#----------------
-# Comparison operators
 
-scores = np.array([91, 55, 100, 73, 82, 64])
+# Ex
 
-print(scores == 100)
-print(scores >= 60)
-print(scores < 60)
+array3 = np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]])
+array4 = np.array([[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]])
 
-scores[scores < 60] = 0
-print(scores)
+#print(array3.shape)
+#print(array4.shape)
+
+print(array3 * array4)
