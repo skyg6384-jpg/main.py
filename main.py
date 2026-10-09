@@ -1,26 +1,32 @@
-# Filtering in NumPy
+# Random number in NumPy
 import numpy as np
 
-# Filtering = Refers to the process of selecting elements
-#             from an array that match a given condition
+# For integers
 
-ages = np.array([[21, 17, 19, 20, 16, 30, 18, 65],
-                 [39, 22, 15, 99, 18, 19, 20, 21]])
+#rng = np.random.default_rng(seed=1)
 
-#teenagers = ages[ages < 18]
-#adults = ages[(ages >= 18) & (ages < 65)]
-#seniors = ages[(ages >= 65)]
-#evens = ages[ages % 2 == 0]
-#odds = ages[ages % 2 != 0]
+#print(rng.integers(low=1, high=101, size=(3, 2)))
 
-#print(teenagers)
-#print(adults)
-#print(seniors)
-#print(evens)
-#print(odds)
+#-------------------
+# For uniform
 
-#------------
+#np.random.seed(seed=1)
+#print(np.random.uniform(low=-1, high=1, size=(3, 2)))
 
-adults = np.where(ages >= 18, ages, 0)
+#-------------------
+# For shuffle
 
-print(adults)
+#rng = np.random.default_rng()
+
+#array = np.array([1, 2, 3, 4, 5])
+#rng.shuffle(array)
+#print(array)
+
+#-------------------
+# For random choices
+
+rng = np.random.default_rng()
+
+fruits = np.array(["🍎", "🍊", "🍌", "🥥", "🍍"])
+fruits = rng.choice(fruits, size=(3, 3))
+print(fruits)
