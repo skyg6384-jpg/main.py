@@ -1,34 +1,21 @@
-# Broadcasting Using NumPy
-
-# Broadcasting allows NumPy to perform operations on arrays
-# with different shapes by virtually expanding dimensions
-# so they match the larger array's shape.
-
-# The dimension have the same size.
-# OR
-# One of the dimensions has a size of 1.
-
-#-----------------
+# Aggregate functions in NumPy
 import numpy as np
 
-array1 = np.array([[1, 2, 3, 4],
-                   [5, 6, 7, 8],
-                   [9, 10, 11, 12],
-                   [13, 14, 15, 16]])
-array2 = np.array([[1], [2], [3], [4]])
+# Aggregate functions = summarize data and typically
+#                       return a single value
 
-print(array1.shape)
-print(array2.shape)
+array = np.array([[1, 2, 3, 4, 5],
+                  [6, 7, 8, 9, 10]])
 
-print(array1 * array2)
+#print(np.sum(array))
+#print(np.sum(array))
+#print(np.mean(array))
+#print(np.std(array))
+#print(np.var(array))
+#print(np.min(array))
+#print(np.max(array))
+#print(np.argmin(array))
+#print(np.argmax(array))
 
-
-# Ex
-
-array3 = np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]])
-array4 = np.array([[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]])
-
-#print(array3.shape)
-#print(array4.shape)
-
-print(array3 * array4)
+print(np.sum(array, axis=0))
+print(np.sum(array, axis=1))
