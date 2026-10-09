@@ -1,21 +1,26 @@
-# Aggregate functions in NumPy
+# Filtering in NumPy
 import numpy as np
 
-# Aggregate functions = summarize data and typically
-#                       return a single value
+# Filtering = Refers to the process of selecting elements
+#             from an array that match a given condition
 
-array = np.array([[1, 2, 3, 4, 5],
-                  [6, 7, 8, 9, 10]])
+ages = np.array([[21, 17, 19, 20, 16, 30, 18, 65],
+                 [39, 22, 15, 99, 18, 19, 20, 21]])
 
-#print(np.sum(array))
-#print(np.sum(array))
-#print(np.mean(array))
-#print(np.std(array))
-#print(np.var(array))
-#print(np.min(array))
-#print(np.max(array))
-#print(np.argmin(array))
-#print(np.argmax(array))
+#teenagers = ages[ages < 18]
+#adults = ages[(ages >= 18) & (ages < 65)]
+#seniors = ages[(ages >= 65)]
+#evens = ages[ages % 2 == 0]
+#odds = ages[ages % 2 != 0]
 
-print(np.sum(array, axis=0))
-print(np.sum(array, axis=1))
+#print(teenagers)
+#print(adults)
+#print(seniors)
+#print(evens)
+#print(odds)
+
+#------------
+
+adults = np.where(ages >= 18, ages, 0)
+
+print(adults)
