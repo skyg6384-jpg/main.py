@@ -1,4 +1,8 @@
-#Intro to pandas
+# Creating a Pandas Series
 import pandas as pd
 
-print(pd.__version__)
+data = [10, 20, 30, 40]
+
+s = pd.Series(data)
+
+print(s)
