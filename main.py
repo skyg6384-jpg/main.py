@@ -1,8 +1,9 @@
-# Creating a Pandas Series
+# Creating a Series with Custom Index
+
 import pandas as pd
 
-data = [10, 20, 30, 40]
+data = [85, 90, 78]
 
-s = pd.Series(data)
+s = pd.Series(data, index=["Math", "Science", "English"])
 
 print(s)
