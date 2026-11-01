@@ -1,9 +1,11 @@
-# Creating a Series with Custom Index
+# Series
+# Creating a Series using a List
+# Series: A Series is a one-dimensional labeled array that can store any type of data.
 
 import pandas as pd
 
-data = [85, 90, 78]
+data = [10, 20, 30, 40, 50]
 
-s = pd.Series(data, index=["Math", "Science", "English"])
+series = pd.Series(data)
 
-print(s)
+print(series)
