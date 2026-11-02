@@ -1,16 +1,13 @@
 # Series
 
-# Example 2:
-# Creating a Series using a Dictionary
+# Example 3:
+# Accessing Series Elements
 
 import pandas as pd
 
-calories = {
-    "Day 1": 2200,
-    "Day 2": 2500,
-    "Day 3": 1800
-}
+data = [100, 200, 300, 400]
 
-series = pd.Series(calories)
+s = pd.Series(data)
 
-print(series)
+print(s[0])
+print(s[2])
