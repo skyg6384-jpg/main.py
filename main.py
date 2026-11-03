@@ -1,13 +1,15 @@
-# Series
+# DataFrames in Pandas
 
-# Example 3:
-# Accessing Series Elements
+# Creating a DataFrame
 
 import pandas as pd
 
-data = [100, 200, 300, 400]
+data = {
+    "Name": ["John", "Spongebob", "Patrick"],
+    "Age": [25, 30, 35],
+    "City": ["New York", "Los Angeles", "Chicago"]
+}
 
-s = pd.Series(data)
+df = pd.DataFrame(data)
 
-print(s[0])
-print(s[2])
+print(df)
